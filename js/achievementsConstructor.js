@@ -36,7 +36,7 @@ const displayAchievement = (achievements) => {
                 <div class="list-level-placement col-2">
                     <span>#${Number(i + 1)}</span>
                 </div>
-                <div class="list-level-background-image col-10" style="background-image: url(rowinile-site/img/${achievements[i].img});">
+                <div class="list-level-background-image col-10" style="background-image: url(img/${achievements[i].img});">
                     <span class="list-level-title">${achievements[i].title} ${achievements[i].progress}</span>
                 </div>
             </div>
