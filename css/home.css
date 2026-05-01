@@ -1,0 +1,98 @@
+#cube {
+    display: flex;
+    align-items: center;
+
+    padding: 30px 0;
+    gap: 20px;
+}
+
+.navigations {
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+
+    gap: 40px;
+}
+
+.navigations > a {
+    width: 250px;
+    height: 250px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    background-color: rgb(30, 25, 0);
+
+    border: 3px solid orange;
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+.navigations > a:hover {
+    border: 3px solid #0011ff;
+}
+
+.navigations > a::before {
+    content: '';
+    
+    position: absolute;
+
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+
+    top: 50%;
+    left: 50%;
+
+    translate: -50% -50%;
+
+    z-index: -1;
+
+    background-color: orange;
+
+    border-radius: 10px;
+
+    filter: blur(1.5rem);
+    opacity: 0.2;
+}
+
+.navigations > a:hover::before {
+    opacity: 0;
+}
+
+.navigations > a:hover::after {
+    content: '';
+    
+    position: absolute;
+
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+
+    border-radius: 10px;
+
+    top: 50%;
+    left: 50%;
+
+    translate: -50% -50%;
+
+    z-index: -1;
+
+    animation: 3s spin linear infinite;
+
+    background-image: conic-gradient(from var(--angle), transparent 50%, #0011ff);
+}
+
+.navigations > * > svg {
+    color: orange;
+}
+
+.navigations > * > span {
+    font-size: 1.5rem;
+    font-weight: 500;
+
+    text-decoration: underline;
+}

@@ -1,0 +1,297 @@
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes spin {
+    0% {
+        --angle: 0deg
+    } 100% {
+        --angle: 360deg
+    }
+}
+
+.list-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin: 20px 0 0 0;
+}
+
+.list-level {
+    width: 100%;
+    height: 180px;
+
+    border: 3px solid #ffd900;
+    border-radius: 30px;
+
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    margin: 20px 0 !important;
+
+    cursor: pointer;
+}
+
+.list-level:nth-child(n+3)::after {
+    content: '';
+    
+    position: absolute;
+
+    width: 101.5%;
+    height: 108%;
+
+    border-radius: 30px;
+
+    top: 50%;
+    left: 50%;
+
+    translate: -50% -50%;
+
+    z-index: -1;
+
+    filter: blur(1.5rem);
+    opacity: 0.2;
+
+    background-color: #ffd900;
+}
+
+#list-level-1::after {
+    content: '';
+    
+    position: absolute;
+
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+
+    border-radius: 30px;
+
+    top: 50%;
+    left: 50%;
+
+    translate: -50% -50%;
+
+    z-index: -1;
+
+    animation: 3s spin linear infinite;
+
+    background-image: conic-gradient(from var(--angle), red, green, blue, yellow, red);
+}
+
+.list-level:hover {
+    border: 3px solid #0011ff;
+    transition: border 0.3s ease;
+}
+
+.list-level:hover::before {
+    content: '';
+    
+    position: absolute;
+
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+
+    border-radius: 30px;
+
+    top: 50%;
+    left: 50%;
+
+    translate: -50% -50%;
+
+    z-index: -1;
+
+    animation: 3s spin linear infinite;
+
+    background-image: conic-gradient(from var(--angle), transparent 50%, #0011ff);
+}
+
+.list-level:hover::after {
+    opacity: 0;
+}
+
+.list-level.active, .list-level.active:hover {
+    border: 3px solid #15ff00;
+}
+
+.list-level.active::after {
+    content: '';
+    
+    position: absolute;
+
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+
+    border-radius: 30px;
+
+    top: 50%;
+    left: 50%;
+
+    translate: -50% -50%;
+
+    z-index: -1;
+
+    filter: blur(1.5rem);
+    opacity: 0.2;
+
+    background-color: #15ff00;
+}
+
+.list-level.active::before {
+    opacity: 0;
+}
+
+.list-level.active .list-level-placement, .list-level.active:hover .list-level-placement {
+    border-right: 4px solid #15ff00;
+}
+
+.list-level-placement {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 0 30px;
+    height: 100%;
+    
+    font-size: 50px;
+    
+    background-color: #ffd90011;
+    border-end-start-radius: 30px;
+    border-start-start-radius: 30px;
+
+    border-right: 4px solid #ffd900;
+
+    background-color: rgb(15, 10, 0);
+}
+
+.list-level:hover .list-level-placement {
+    border-right: 4px solid #0011ff;
+    transition: border 0.3s ease;
+}
+
+.list-level-background-image {
+    display: flex;
+    align-items: center;
+    
+    height: 100%;
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    border-start-end-radius: 30px;
+    border-end-end-radius: 30px;
+}
+
+.list-level-title {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+    margin-left: 40px;
+    
+    font-size: 3rem;
+
+    border-radius: 10px;
+}
+
+.list-level-details {
+    display: none;
+    flex-direction: column;
+    
+    width: 100%;
+
+    border: 3px solid #15ff00;
+    border-radius: 10px;
+
+    margin: 10px 0 !important;
+}
+
+@keyframes showDetails {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.list-level-details.show {
+    display: flex;
+
+    animation: showDetails 1s ease;
+}
+
+.list-level-details span {
+    border-bottom: 1px solid #15ff00;
+
+    background-color: rgb(30, 25, 0);
+
+    padding: 0.6rem;
+    /* padding: 10px; */
+}
+
+.list-level-details span:first-child {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.list-level-details span:last-child {
+    border: none;
+
+    border-end-end-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+@media (max-width: 992px) {
+    .list-level {
+        height: 120px;
+    }
+
+    .list-level-placement {
+        font-size: 2.5rem;
+    }
+    
+    .list-level-title {
+        margin-left: 20px;
+    
+        font-size: 2rem;
+    }
+
+    .list-level-details span {
+        padding: .5rem;
+
+        font-size: 1rem;
+    }
+}
+
+.achievement {
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .list-level {
+        height: 90px;
+    }
+
+    .list-level-placement {
+        font-size: 2rem;
+    }
+
+    .list-level-title {
+        margin-left: 15px;
+    
+        font-size: 1.5rem;
+    }
+
+    .list-level-details span {
+        padding: .45rem;
+
+        font-size: .85rem;
+    }
+}

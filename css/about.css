@@ -1,0 +1,29 @@
+#home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#home-container > div {
+    width: 500px;
+
+    background-color: rgb(10, 10, 10);
+    
+    border: 3px solid #ffd900;
+    border-radius: 30px;
+
+    padding: 30px 30px 20px 30px;
+
+    margin: 0 0 20px 0;
+}
+
+@media (max-width: 500px) {
+    #home-container > div {
+        width: 100%;
+    }
+}
+
+#home-container > h2 {
+    margin: 20px 0;
+}
