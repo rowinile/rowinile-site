@@ -1,3 +1,17 @@
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes spin {
+    0% {
+        --angle: 0deg
+    } 100% {
+        --angle: 360deg
+    }
+}
+
 #cube {
     display: flex;
     align-items: center;
