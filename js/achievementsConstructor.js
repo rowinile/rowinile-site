@@ -24,6 +24,7 @@ const achievements = [
   new Achievement("Kyouki", "77-100", "kyouki.png"),
   new Achievement("Endless Dream", "100%", "endlessDream.png"),
   new Achievement("Bloodbath", "100%", "bloodbath.png"),
+  new Achievement("playing possum", "100%", "playingPossum.png"),
   new Achievement("Hidden In The Sand", "100%", "hiddenInTheSand.png"),
 ];
 
