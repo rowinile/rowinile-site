@@ -7,7 +7,7 @@ class Achievement {
 }
 
 const achievements = [
-  new Achievement("???", "72%, 15-92", ""),
+  new Achievement("???", "83%", ""),
   new Achievement("Solar Flare", "69%", "solarFlare.png"),
   new Achievement("Midnight", "100%", "midnight.png"),
   new Achievement("arcturus", "83%", "arcturus.png"),
