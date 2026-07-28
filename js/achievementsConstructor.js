@@ -9,7 +9,7 @@ class Achievement {
 const achievements = [
   new Achievement("CHIL", "100%", "chil.png"),
   new Achievement("Fracture", "100%", "fracture.png"),
-  new Achievement("Solar Flare", "69%", "solarFlare.png"),
+  new Achievement("Solar Flare", "100%", "solarFlare.png"),
   new Achievement("Midnight", "100%", "midnight.png"),
   new Achievement("arcturus", "83%", "arcturus.png"),
   new Achievement("Starlight Summit", "100%", "starlight.png"),
