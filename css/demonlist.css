@@ -37,29 +37,6 @@
     cursor: pointer;
 }
 
-.list-level:nth-child(n+3)::after {
-    content: '';
-    
-    position: absolute;
-
-    width: 101.5%;
-    height: 108%;
-
-    border-radius: 30px;
-
-    top: 50%;
-    left: 50%;
-
-    translate: -50% -50%;
-
-    z-index: -1;
-
-    filter: blur(1.5rem);
-    opacity: 0.2;
-
-    background-color: #ffd900;
-}
-
 #list-level-1::after {
     content: '';
     
